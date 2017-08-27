@@ -1,0 +1,50 @@
+<html>
+<head>
+ <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css">
+
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>
+  <link rel="stylesheet" href="style.css">
+  <script>
+  function validate(){
+if(form.username.value == ""){
+    alert("Please enter a User Name");
+    form.username.focus();
+    return false;
+}
+if(form.emailid.value == ""){
+    alert("Please enter your email id");
+    form.emailid.focus();
+    return false;
+}
+ re = /^\w+$/;
+    if(!re.test(form.username.value)) {
+      alert("Error: Username must contain only letters, numbers and underscores!");
+      form.username.focus();
+      return false;
+    }
+	 var x = document.forms["form"]["emailid"].value;
+    var atpos = x.indexOf("@");
+    var dotpos = x.lastIndexOf(".");
+    if (atpos<1 || dotpos<atpos+2 || dotpos+2>=x.length) {
+        alert("Not a valid e-mail address");
+        return false;
+    }
+}
+</script>
+</head>
+  <body>
+  <div class="bb">
+  <h1>Password Recovery</h1>
+  <form name="form"action="codereceived.html" onsubmit="return validate()">
+  <input type="text" placeholder=" username" id="username" style="color:white"><br><br>
+<input type="text" placeholder="email id" id="emailid" style="color:white"><br><br>
+<form action="codereceived.html" > 
+<button class="btn waves-effect waves-light" type="submit" name="action" id="submit" method="post">Submit</button><br><br>
+</form>
+ <a href="./Ownerlogin.html">Back</a>
+</div>
+</form>
+  </body>
+  </html>

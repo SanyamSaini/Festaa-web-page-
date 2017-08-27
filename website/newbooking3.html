@@ -1,0 +1,40 @@
+<html>
+<head>
+ <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css">
+
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>
+          
+<link rel="stylesheet" href="style.css">
+<script type="text/javascript">
+function validate(){
+if(form.bookingdate.value == ""){
+    alert("Please enter the booking date");
+    form.bookingdate.focus();
+    return false;
+}
+if(form.leavingdatedate.value == ""){
+    alert("Please enter the leaving date");
+    form.leavingdate.focus();
+    return false;
+	}
+	}
+	</script>
+</head>
+<body>
+<div class="hh">
+<h1>New Bookings</h1>
+<form name="form"action="afterupdation.html"onsubmit="return validate">
+<font color="#ffffff">
+<h5>Booking Date</h5>
+<input type="date"id="bookingdate" data-date-inline-picker="true" style="color:white"/>
+<font color="#ffffff">
+<h5>Leaving Date</h5>
+<input type="date"id="leavingdate" data-date-inline-picker="true" style="color:white"/>
+<button class="btn waves-effect waves-light" type="submit" name="action" id="login"  method="post">Submit</button><br><br>
+</form>
+</div>
+
+</body>
+</html>

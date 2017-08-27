@@ -1,0 +1,68 @@
+<html>
+<head>
+ <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css">
+
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>
+          
+<link rel="stylesheet" href="style.css">
+<script type="text/javascript">
+function validate(){
+if(form.customername.value == ""){
+    alert("Please enter the customer name");
+    form.customername.focus();
+    return false;
+}
+if(form.mobilenumber.value == ""){
+    alert("Please enter the mobile number");
+    form.mobilenumber.focus();
+    return false;
+}
+if(form.emailid.value == ""){
+    alert("Please enter the email id");
+    form.emailid.focus();
+    return false;
+}
+if(form.address1.value == ""){
+    alert("Please enter the Address");
+    form.address1.focus();
+    return false;
+}
+ var x = document.forms["form"]["emailid"].value;
+    var atpos = x.indexOf("@");
+    var dotpos = x.lastIndexOf(".");
+    if (atpos<1 || dotpos<atpos+2 || dotpos+2>=x.length) {
+        alert("Not a valid e-mail address");
+        return false;
+    }
+      var x = document.form.mobilenumber.value;
+	   if (x.length < 10 )
+		{
+                alert("enter 10 Digits in mobile number"); 
+			  return false;
+           }
+        if(isNaN(x)|| x.indexOf(" ")!=-1)
+		{
+              alert("Enter numeric value");
+			  return false; 
+			  }
+       
+}
+</script>
+</head>
+<body>
+<div class="hh">
+<h1>New Bookings</h1>
+<form name="form"action="newbooking2.html"onsubmit="return validate()"> 
+<input type="text" placeholder=" Customer Name" id="customername" style="color:white"><br><br>
+<input type="text" placeholder=" Mobile Number" id="mobilenumber" style="color:white"><br><br>
+<input type="text" placeholder=" Email id" id="emailid" style="color:white"><br><br>
+<input type="text" placeholder=" Address 1" id="address1" style="color:white"><br><br>
+<input type="text" placeholder=" Address 2" id="address2" style="color:white"><br><br>
+<input type="text" placeholder=" Address 3" id="address3" style="color:white"><br><br>
+<button class="btn waves-effect waves-light" type="submit" name="action" id="login"  method="post">Next</button><br><br>
+</form>
+</div>
+</body>
+</html>

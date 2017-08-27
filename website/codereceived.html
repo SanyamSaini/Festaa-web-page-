@@ -1,0 +1,30 @@
+<html>
+<head
+ <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css">
+
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>
+          
+<link rel="stylesheet" href="style.css">
+ <script type="text/javascript">
+  function validate(){
+if(form.codereceived.value == ""){
+    alert("Please enter the code you received");
+    form.codereceived.focus();
+    return false;
+}
+}
+</script>
+</head>
+<body>
+<div class="cc">
+<h1>Check Your email</h1>
+<form name="form"action="Newpassword.html" onsubmit="return validate()">
+<input type="text" placeholder=" Enter the code you have received" id="codereceived"style="color:white"><br><br>
+<button class="btn waves-effect waves-light" type="submit" name="action">Submit</button><br><br>
+</form>
+<a href="./forgot.html">Didn't receive code?</a>
+</div>
+</body>
+</html>

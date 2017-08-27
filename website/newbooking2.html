@@ -1,0 +1,71 @@
+<html>
+<head>
+ <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css">
+
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>
+          
+<link rel="stylesheet" href="style.css">
+<script type="text/javascript">
+function validate(){
+if(form.bookingfor.value == ""){
+    alert("Please enter the purpose of booking");
+    form.bookingfor.focus();
+    return false;
+}
+if(form.area.value == ""){
+    alert("Please enter the Area");
+    form.area.focus();
+    return false;
+}
+if(form.city.value == ""){
+    alert("Please enter the city");
+    form.city.focus();
+    return false;
+}
+if(form.pincode.value == ""){
+    alert("Please enter the pincode");
+    form.pincode.focus();
+    return false;
+}
+if(form.bookingamount.value == ""){
+    alert("Please enter the booking amount");
+    form.bookingamount.focus();
+    return false;
+}
+var x = document.form.pincode.value;
+  if(isNaN(x)|| x.indexOf(" ")!=-1)
+		{
+              alert("Enter numeric value in pin code");
+			  return false; 
+			  }
+if (x.length <6 )
+		{
+                alert("enter 6 Digits in pin code"); 
+			  return false;
+           }
+		   var y = document.form.bookingamount.value;
+  if(isNaN(y)|| y.indexOf(" ")!=-1)
+		{
+              alert("Enter numeric value in Booking Amount");
+			  return false; 
+			  }
+		 
+}
+</script>
+</head>
+<body>
+<div class="hh">
+<h1>New Bookings</h1>
+<form name="form"action="newbooking3.html"onsubmit="return validate()"> 
+<input type="text" placeholder=" Booking For" id="bookingfor" style="color:white"><br><br>
+<input type="text" placeholder=" Area" id="area" style="color:white"><br><br>
+<input type="text" placeholder=" City" id="city" style="color:white"><br><br>
+<input type="text" placeholder=" Pin Code" id="pincode" style="color:white"><br><br>
+<input type="text" placeholder=" Booking Amount" id="bookingamount" style="color:white"><br><br>
+<button class="btn waves-effect waves-light" type="submit" name="action" id="login"  method="post">Next</button><br><br>
+</form>
+</div>
+</body>
+</html>
